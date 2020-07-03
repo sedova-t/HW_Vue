@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+        <script src="../vue.js"></script>
+</head>
+<body>
+<div id="vue-app" >
+    <header>
+        <div class="description-container">
+            <div class="description-buttons">
+                <div v-bind:class="['desc-button', (activeMain) ? 'button-active' : '']"
+                     v-on:click="showMain">ГЛАВНАЯ</div>
+                <div v-bind:class="['desc-button', (!activeMain) ? 'button-active' : '']"
+                     v-on:click="showCabinet">ЛИЧНЫЙ КАБИНЕТ</div>
+            </div>
+        </div>
+    </header>
+    <div v-if="activeMain">
+        <div class="vue-app">
+            <div>
+                <img v-bind:src="image" alt="">
+            </div>
+            <div class="right-block">
+                <div class="components">
+                    <p>{{description}}</p>
+                </div>
+
+                <div class="box-size">
+                    <p class="top-size">Размер:</p>
+                    <div>
+                        <div v-for="(i, index) in sizes" v-bind:class="['item-size', i.active ? 'active' : '']">
+                            <p class="circle" v-on:click="selectSize(index)">{{i.size}}</p>
+                            <p>{{i.title}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons-box">
+                    <div class="price">
+                        <p>{{getPrice}} P.</p>
+                    </div>
+                    <div class="top-btn">Добавить начинку</div>
+                    <div class="bottom-btn">
+                        <div class="add-btn">В каталог</div>
+                        <div class="buy-btn">Купить</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="description-container">
+            <div class="description-buttons">
+                <div v-bind:class="['desc-button', (activeDescription) ? 'button-active' : '']"
+                     v-on:click="showDescription">ОПИСАНИЕ</div>
+                <div v-bind:class="['desc-button', (activeNutritious) ? 'button-active' : '']"
+                     v-on:click="showNutritious">ПИТАТЕЛЬНЫЕ ЦЕННОСТИ</div>
+            </div>
+            <div class="description-content">
+                <div v-if="activeDescription">
+                    {{arrayText}}
+                    <span class="show-more" v-on:click="showAll" v-if="showMore">показать еще...</span>
+                    <span class="show-more" v-on:click="hideText" v-if="!showMore && showMoreHideText">скрыть</span>
+                </div>
+                <table v-if="activeNutritious">
+                   <tr>
+                       <th>ПИЩЕВАЯ ЦЕННОСТЬ</th>
+                   </tr>
+                   <tr>
+                       <th>ККАЛ</th>
+                       <th>{{nutritious.calories}}</th>
+                   </tr>
+                   <tr>
+                       <th>БЕЛКИ</th>
+                       <th>{{nutritious.proteins}}</th>
+                   </tr>
+                   <tr>
+                       <th>ЖИРЫ</th>
+                       <th>{{nutritious.fats}}</th>
+                   </tr>
+                   <tr>
+                       <th>УГЛЕВОДЫ</th>
+                       <th>{{nutritious.carbo}}</th>
+                   </tr>
+               </table>
+            </div>
+        </div>
+    </div>
+    <div v-else>
+        <div class="vue-app">
+            <div style="width: 500px;">
+                <img v-bind:src="user.photo" alt="">
+            </div>
+            <div class="right-block-cabinet">
+                <div>
+                    <p><span>Логин: </span>{{user.login}}</p>
+                    <p><span>Имя:</span> {{user.name}}</p>
+                    <p><span>Фамилия:</span> {{user.secondName}}</p>
+                    <p><span>E-mail: </span>{{user.eMail}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

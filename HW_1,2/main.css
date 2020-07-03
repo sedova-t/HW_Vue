@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.vue-app{
+    display: flex;
+    padding: 30px 40px;
+    border-top: 4px dotted #6BB18C;
+
+}
+.right-block{
+    padding-left: 20px;
+}
+img{
+    width: 100%;
+    border: 4px dotted #6BB18C;
+}
+.item-size{
+    display: flex;
+    align-items: center;
+}
+.box-size {
+    margin-top: 20px;
+}
+.circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #eeeeee;
+    font-size: 18px;
+    margin-right: 30px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.circle:hover{
+    background-color: #6BB18C;
+    color: white;
+}
+.item-size.active .circle{
+    background-color: #6BB18C;
+    color: white;
+}
+.price {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #6BB18C;
+}
+.buttons-box{
+    max-width: 320px;
+    margin-top: 30px;
+}
+.top-btn{
+    text-align: center;
+    border: 3px dotted #6BB18C;
+    border-radius: 15px;
+    padding: 10px;
+    font-size: 22px;
+    font-size: 16px;
+}
+.bottom-btn{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+
+}
+.add-btn{
+    width: 45%;
+    text-align: center;
+    background-color: #6BB18C;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 22px;
+    color: white;
+}
+.buy-btn{
+    width: 45%;
+    text-align: center;
+    background-color: #EF9688;
+    border-radius: 15px;
+    padding: 15px;
+    font-size: 22px;
+    color: white;
+}
+.description-container{
+    margin-left: 120px;
+}
+.description-buttons{
+    display: flex;
+    margin: 10px;
+}
+.desc-button{
+    margin-right: 2px;
+    font-size: 20px;
+    color: #6BB18C;
+    padding: 15px 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.desc-button:hover{
+    background-color: #eeeeee;
+}
+.button-active{
+    color:  #EF9688;
+    background-color: #eeeeee;
+}
+.show-more {
+    cursor: pointer;
+    color: #EF9688;
+}
+.right-block-cabinet{
+    margin-left: 20px;
+}
+.right-block-cabinet p{
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+.right-block-cabinet p span{
+    color: #6BB18C;
+    font-size: 20px;
+}
