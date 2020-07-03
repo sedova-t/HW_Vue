@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="../vue.js"></script>
+</head>
+<body>
+
+<div id="vue-app">
+
+    <label class="search">
+        <h1>Поиск:</h1>
+        <input type="text" v-model="search">
+    </label>
+
+    <div class="container-pages">
+        <div v-for="(page, index) in getPages" class="page-item" ref="inputs" :key="index" >
+            <h2 @click="showInput(index)">{{page.name}}</h2>
+            <div  v-if="page.inputActive">
+                <input type="text"  :value="page.name">
+                <button @click="changeName(index)">OK</button>
+            </div>
+            <a :href="page.url" target="_blank">
+                <img :src="page.img" :alt="page.name">
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
