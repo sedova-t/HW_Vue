@@ -12,14 +12,50 @@
     height: 30px;
     padding-left: 10px;
 }
+.switch{
+    display: flex;
+    margin: 30px;
+}
+.switch-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    font-size: 20px;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.switch-item:hover{
+    background-color: yellow;
+}
 .container-pages{
     display: flex;
     flex-wrap: wrap;
 }
-.page-item{
+.container-pages .page-item{
     width: calc(25% - 20px);
     margin: 10px;
 }
-.page-item img{
+.container-pages .page-item img{
     width: 100%;
+}
+.container-pages.list{
+    flex-direction: column;
+}
+.container-pages.list .page-item{
+    display: flex;
+    width: 50%;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+}
+.container-pages.list .page-item img{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 20px;
 }

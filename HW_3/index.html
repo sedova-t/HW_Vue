@@ -17,10 +17,17 @@
         <h1>Поиск:</h1>
         <input type="text" v-model="search">
     </label>
+    <div class="switch">
+        <div class="switch-item" @click="isListActived = false">+</div>
+        <div class="switch-item" @click="isListActived = true">-</div>
+    </div>
 
-    <div class="container-pages">
+    <div :class="['container-pages', (isListActived) ? 'list' : '']">
         <div v-for="(page, index) in getPages" class="page-item" ref="inputs" :key="index" >
-            <h2 @click="showInput(index)">{{page.name}}</h2>
+            <div>
+                <h2 @click="showInput(index)">{{page.name}}</h2>
+                <p v-if="isListActived">{{page.description}}</p>
+            </div>
             <div  v-if="page.inputActive">
                 <input type="text"  :value="page.name">
                 <button @click="changeName(index)">OK</button>
